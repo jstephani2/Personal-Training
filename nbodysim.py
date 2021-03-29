@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+# Calculate acceleration on each particle and return as array
 def getAcc(pos, mass, G, softening):
 	x = pos[:,0:1]
 	y = pos[:,1:2]
@@ -23,12 +24,12 @@ def getAcc(pos, mass, G, softening):
 	a = np.hstack((ax,ay,az))
 	return a
 
+# Return kinetic and potential energies as arrays
 def getEnergy(pos, vel, mass, G):
+	# Calculate kinetic energies
 	KE = 0.5 * np.sum(np.sum( mass * vel**2 ))
 
-
-	# Potential Energy:
-
+	# Calculate potential energies
 	# positions r = [x,y,z] for all particles
 	x = pos[:,0:1]
 	y = pos[:,1:2]
